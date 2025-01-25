@@ -83,9 +83,9 @@ const NavBar: React.FC<NavBarProps> = ({ toggleDarkMode, darkMode }) => {
                 transition={{ duration: 0.3, ease: "easeInOut" }}
                 className={`fixed top-0 left-0 h-full w-64 ${
                   darkMode ? "bg-slate-400" : "bg-black"
-                } shadow-lg z-40`}
+                } shadow-lg z-20`}
               >
-                <nav className={`flex flex-col p-4`}>
+                <nav className={`flex flex-col p-4 gap-[15px]`}>
                   {navLink.map((link) => (
                     <motion.div
                       key={link.linkName}
@@ -99,7 +99,7 @@ const NavBar: React.FC<NavBarProps> = ({ toggleDarkMode, darkMode }) => {
                           scrollToSection(link.id);
                           handleMobileNavOpener();
                         }}
-                        className={`py-2 ${
+                        className={`py-2 text-[18px] ${
                           darkMode ? "!text-black" : "!text-white"
                         } hover:underline`}
                       >

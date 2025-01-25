@@ -7,7 +7,7 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
   return (
     <section
       id="home"
-      className={`flex w-full text-white font-quicksand py-12`}
+      className={`flex w-full text-white font-quicksand pt-[80px] pb-12`}
     >
       <div className="w-full flex flex-col justify-center items-center gap-3">
         {/* Profile Image */}
@@ -52,9 +52,9 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
           </motion.button>
 
           {/* Location */}
-          <p className="text-[18px] font-aclonica text-white font-light drop-shadow-xs">
+          <span className="text-[18px] font-aclonica text-white font-light">
             Based in 📍 Lagos, NG
-          </p>
+          </span>
         </motion.article>
       </div>
     </section>
