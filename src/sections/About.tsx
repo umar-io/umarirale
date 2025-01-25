@@ -59,6 +59,18 @@ const language = [
   },
 ];
 
+const skillSets = [
+  { name: "TypeScript", icon: "typescript/typescript-original" },
+  { name: "JavaScript", icon: "javascript/javascript-original" },
+  { name: "React", icon: "react/react-original" },
+  { name: "PHP", icon: "php/php-original" },
+  { name: "Django", icon: "django/django-plain" },
+  { name: "Laravel", icon: "laravel/laravel-original" },
+  { name: "Tailwind CSS", icon: "tailwindcss/tailwindcss-original" },
+  { name: "SQLite", icon: "sqlite/sqlite-original" },
+  { name: "MySQL", icon: "mysql/mysql-original" },
+];
+
 const About: React.FC<AboutProps> = ({ darkMode }) => {
   return (
     <section
@@ -197,17 +209,7 @@ const About: React.FC<AboutProps> = ({ darkMode }) => {
           transition={{ duration: 0.5 }}
           className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-8 mt-8"
         >
-          {[
-            { name: "TypeScript", icon: "typescript/typescript-original" },
-            { name: "JavaScript", icon: "javascript/javascript-original" },
-            { name: "React", icon: "react/react-original" },
-            { name: "PHP", icon: "php/php-original" },
-            { name: "Django", icon: "django/django-plain" },
-            { name: "Laravel", icon: "laravel/laravel-original" },
-            { name: "Tailwind CSS", icon: "tailwindcss/tailwindcss-original" },
-            { name: "SQLite", icon: "sqlite/sqlite-original" },
-            { name: "MySQL", icon: "mysql/mysql-original" },
-          ].map((skill, index) => (
+          {skillSets.map((skill, index) => (
             <motion.div
               key={index}
               whileHover={{ scale: 1.05 }}
