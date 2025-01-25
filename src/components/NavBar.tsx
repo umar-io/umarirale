@@ -13,8 +13,8 @@ const NavBar: React.FC<NavBarProps> = ({ toggleDarkMode, darkMode }) => {
   const navLink = [
     { linkName: "Home", id: "home" },
     { linkName: "About", id: "about" },
-    { linkName: "Service", id: "/service" },
-    { linkName: "Projects", id: "/projects" },
+    { linkName: "Service", id: "service" },
+    { linkName: "Projects", id: "projects" },
   ];
 
   const scrollToSection = (id: string) => {
@@ -124,7 +124,7 @@ const NavBar: React.FC<NavBarProps> = ({ toggleDarkMode, darkMode }) => {
                 <button
                   onClick={toggleDarkMode}
                   className={`ml-4 p-2 rounded-[50%] ${
-                    darkMode ? "bg-black !text-white" : "bg-white !text-black"
+                    darkMode ? "bg-black !text-white" : "bg-slate-400 !text-black"
                   } duration-300 ease-in-out`}
                   aria-label="Toggle Dark Mode"
                 >
@@ -163,7 +163,7 @@ const NavBar: React.FC<NavBarProps> = ({ toggleDarkMode, darkMode }) => {
             whileHover={{ scale: 1.1 }} // Add hover effect
             whileTap={{ scale: 0.9 }} // Add tap effect
             className={`ml-4 p-2 rounded-[50%] ${
-              darkMode ? "bg-white text-black" : "bg-black text-white"
+              darkMode ? "bg-slate-400 text-black" : "bg-black text-white"
             } duration-300 ease-in-out`}
             aria-label="Toggle Dark Mode"
           >

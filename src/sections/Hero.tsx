@@ -1,19 +1,45 @@
 import { motion } from "framer-motion";
+import { useEffect } from "react";
+import Typed from "typed.js";
+
 interface HeroProps {
   darkMode: boolean;
 }
 
 const Hero: React.FC<HeroProps> = ({ darkMode }) => {
+  useEffect(() => {
+    const options = {
+      strings: ["Frontend Development", "Backend Development", "DApp", "SEO"],
+      typeSpeed: 50,
+      backSpeed: 50,
+      backDelay: 1000,
+      startDelay: 500,
+      loop: true,
+    };
+
+    const typed = new Typed(".typed-js", options);
+
+    return () => {
+      typed.destroy(); // Cleanup the Typed.js instance on unmount
+    };
+  }, []);
   return (
     <section
       id="home"
-      className={`flex w-full text-white font-quicksand pt-[80px] pb-12`}
+      className={`flex w-full text-white font-quicksand pt-[80px] pb-12 ${
+        darkMode ? "bg-black" : "bg-slate-400"
+      }`}
     >
       <div className="w-full flex flex-col justify-center items-center gap-3">
         {/* Profile Image */}
-        <div className="w-[200px] h-[200px] rounded-[50%] bg-slate-300 flex items-center justify-center">
+        <motion.div
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="w-[200px] h-[200px] rounded-[50%] bg-slate-300 flex items-center justify-center"
+        >
           <span className="text-black text-2xl">H</span>
-        </div>
+        </motion.div>
 
         {/* Name */}
         <motion.h3
@@ -33,8 +59,9 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
           className="flex flex-col items-center justify-center gap-5 lg:text-[35px] md:text-[40px] text-[20px] lg:w-[50%] text-center font-medium font-mona"
         >
           <p>
-            Crafting web solutions with code, I specialize in both frontend and
-            backend development, integrating both technologies seamlessly.
+            Crafting web solutions with code, I specialize in both{" "}
+            <span className={`typed-js font-aclonica`}></span>, integrating technologies into
+            existence seamlessly.
           </p>
 
           {/* Connect Button */}
@@ -52,9 +79,14 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
           </motion.button>
 
           {/* Location */}
-          <span className="text-[18px] font-aclonica text-white font-light">
+          <motion.p
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
+            className="text-[18px] font-aclonica text-white font-light"
+          >
             Based in 📍 Lagos, NG
-          </span>
+          </motion.p>
         </motion.article>
       </div>
     </section>
