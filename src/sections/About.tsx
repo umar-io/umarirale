@@ -91,7 +91,9 @@ const About: React.FC<AboutProps> = ({ darkMode }) => {
           Open to work{" "}
           <span className="bg-green-500 w-2 h-2 rounded-full"></span>
         </motion.button>
-        <p className="font-bold font-quicksand text-left py-8 ">
+
+        {/* Introduction Paragraph */}
+        <p className="font-bold font-quicksand text-left py-8">
           I’m constantly seeking out more challenging problems in software
           engineering because they offer the opportunity to deepen my knowledge
           and push my limits. Each new challenge presents a chance to learn and
@@ -99,6 +101,7 @@ const About: React.FC<AboutProps> = ({ darkMode }) => {
           milestones is driven by both purpose and the tangible results I aim
           for.
         </p>
+
         {/* Content Grid */}
         <article className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Experience Section */}
@@ -186,6 +189,46 @@ const About: React.FC<AboutProps> = ({ darkMode }) => {
             </div>
           </div>
         </article>
+
+        {/* Skills Grid */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-8 mt-8"
+        >
+          {[
+            { name: "TypeScript", icon: "typescript/typescript-original" },
+            { name: "JavaScript", icon: "javascript/javascript-original" },
+            { name: "React", icon: "react/react-original" },
+            { name: "PHP", icon: "php/php-original" },
+            { name: "Django", icon: "django/django-plain" },
+            { name: "Laravel", icon: "laravel/laravel-original" },
+            { name: "Tailwind CSS", icon: "tailwindcss/tailwindcss-original" },
+            { name: "SQLite", icon: "sqlite/sqlite-original" },
+            { name: "MySQL", icon: "mysql/mysql-original" },
+          ].map((skill, index) => (
+            <motion.div
+              key={index}
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.2 }}
+              className="flex flex-col items-center justify-center p-6 rounded-lg transition-shadow cursor-pointer"
+            >
+              <img
+                src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${skill.icon}.svg`}
+                alt={skill.name}
+                className="w-16 h-16 mb-4"
+              />
+              <span
+                className={`text-lg font-semibold  ${
+                  darkMode ? "text-white" : "text-white"
+                }`}
+              >
+                {skill.name}
+              </span>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );
