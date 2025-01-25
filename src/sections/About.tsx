@@ -130,7 +130,7 @@ const About: React.FC<AboutProps> = ({ darkMode }) => {
                 >
                   {/* Content */}
                   <div className="flex-1 cursor-pointer">
-                    <p className="text-sm text-gray-400">
+                    <p className="text-sm text-white">
                       {ex.start} - {ex.end === null ? "Present" : ex.end}
                     </p>
                     <p className="text-lg font-semibold">{ex.name}</p>
@@ -161,7 +161,7 @@ const About: React.FC<AboutProps> = ({ darkMode }) => {
                 >
                   {/* Content */}
                   <div className="flex-1 cursor-pointer">
-                    <p className="text-sm text-gray-400">
+                    <p className="text-sm text-white">
                       {edu.start} - {edu.end === null ? "Present" : edu.end}
                     </p>
                     <p className="text-lg font-semibold">{edu.name}</p>
