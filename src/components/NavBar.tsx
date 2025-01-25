@@ -58,7 +58,10 @@ const NavBar: React.FC<NavBarProps> = ({ toggleDarkMode, darkMode }) => {
 
       {isMobile ? (
         <div>
-          <button onClick={handleMobileNavOpener} className="p-2">
+          <button
+            onClick={handleMobileNavOpener}
+            className={`p-2 ${darkMode ? "text-white" : "text-black"}`}
+          >
             {isOpen ? <X /> : <Menu />}
           </button>
 
