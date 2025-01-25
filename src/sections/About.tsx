@@ -45,7 +45,7 @@ const educationalBackground = [
     end: null,
   },
   {
-    name: "Jonas",
+    name: "Jonas Schmedtmann",
     course: "Frontend Development (ReactJS)",
     start: "2024",
     end: null,
@@ -91,7 +91,14 @@ const About: React.FC<AboutProps> = ({ darkMode }) => {
           Open to work{" "}
           <span className="bg-green-500 w-2 h-2 rounded-full"></span>
         </motion.button>
-
+        <p className="font-bold font-quicksand text-left py-8 ">
+          I’m constantly seeking out more challenging problems in software
+          engineering because they offer the opportunity to deepen my knowledge
+          and push my limits. Each new challenge presents a chance to learn and
+          grow, and I believe that my persistence in achieving greater
+          milestones is driven by both purpose and the tangible results I aim
+          for.
+        </p>
         {/* Content Grid */}
         <article className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Experience Section */}
@@ -107,7 +114,7 @@ const About: React.FC<AboutProps> = ({ darkMode }) => {
                   className="flex items-start gap-4"
                 >
                   {/* Content */}
-                  <div className="flex-1">
+                  <div className="flex-1 cursor-pointer">
                     <p className="text-sm text-gray-400">
                       {ex.start} - {ex.end === null ? "Present" : ex.end}
                     </p>
@@ -138,7 +145,7 @@ const About: React.FC<AboutProps> = ({ darkMode }) => {
                   className="flex items-start gap-4"
                 >
                   {/* Content */}
-                  <div className="flex-1">
+                  <div className="flex-1 cursor-pointer">
                     <p className="text-sm text-gray-400">
                       {edu.start} - {edu.end === null ? "Present" : edu.end}
                     </p>
