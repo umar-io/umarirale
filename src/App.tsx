@@ -3,6 +3,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Hero from "./sections/Hero";
 import Footer from "./components/Footer";
+import About from "./sections/About";
 const App = () => {
   return (
     <DarkModeProvider>
@@ -27,6 +28,7 @@ const MainComponent = () => {
       <NavBar toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
       <main className="flex-grow">
         <Hero darkMode={darkMode} />
+        <About darkMode={darkMode} />
       </main>
       <Footer darkMode={darkMode} getYear={getYear()} />
     </div>

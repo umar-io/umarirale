@@ -1,4 +1,3 @@
-import lightLogo from "../assets/umarirale_.png";
 import darkLogo from "../assets/umariraledark_.png";
 import { Link } from "react-router-dom";
 import { Lightbulb, LightbulbOff, X, Menu } from "lucide-react";
@@ -27,6 +26,23 @@ const NavBar: React.FC<NavBarProps> = ({ toggleDarkMode, darkMode }) => {
 
   const [isOpen, setIsOpen] = useState(false);
 
+  const useIsScrolled = () => {
+    const [isScrolled, setisScrolled] = useState(window.scrollY > 0);
+
+    useEffect(() => {
+      const handleScrollY = () => {
+        setisScrolled(window.scrollY > 0);
+      };
+
+      window.addEventListener("scroll", handleScrollY);
+
+      return () => {
+        window.removeEventListener("resize", handleScrollY);
+      };
+    }, []);
+    return isScrolled;
+  };
+
   const handleMobileNavOpener = () => {
     setIsOpen(!isOpen);
   };
@@ -50,17 +66,16 @@ const NavBar: React.FC<NavBarProps> = ({ toggleDarkMode, darkMode }) => {
   };
 
   const isMobile = useIsMobile();
+  const isScrolled = useIsScrolled();
 
   return (
     <header
-      className={`py-[20px] px-[40px] h-[70px] flex justify-between items-center duration-300 ease-in-out font-quicksand sticky top-0 shadow-md`}
+      className={`py-[20px] px-[40px] h-[70px] flex justify-between items-center duration-300 ease-in-out font-quicksand sticky top-0 shadow-md ${
+        isScrolled ? (darkMode ? "bg-black" : "bg-slate-400") : "bg-transparent"
+      }`}
     >
       <div className="w-[30%]">
-        <img
-          src={darkMode ? darkLogo : lightLogo}
-          alt="Logo"
-          className="w-[50px]"
-        />
+        <img src={darkLogo} alt="Logo" className="w-[50px]" />
       </div>
 
       {isMobile ? (
@@ -99,9 +114,7 @@ const NavBar: React.FC<NavBarProps> = ({ toggleDarkMode, darkMode }) => {
                           scrollToSection(link.id);
                           handleMobileNavOpener();
                         }}
-                        className={`py-2 text-[18px] ${
-                          darkMode ? "!text-black" : "!text-white"
-                        } hover:underline`}
+                        className={`py-2 text-[18px] text-white hover:underline`}
                       >
                         {link.linkName}
                       </Link>
@@ -139,9 +152,7 @@ const NavBar: React.FC<NavBarProps> = ({ toggleDarkMode, darkMode }) => {
                 onClick={() => {
                   scrollToSection(link.id);
                 }}
-                className={`${
-                  darkMode ? "text-white" : "text-black"
-                } hover:underline`}
+                className={`text-white hover:underline`}
               >
                 {link.linkName}
               </Link>
