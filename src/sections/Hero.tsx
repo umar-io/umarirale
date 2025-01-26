@@ -60,8 +60,8 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
         >
           <p>
             Crafting web solutions with code, I specialize in both{" "}
-            <span className={`typed-js font-aclonica`}></span>, integrating technologies into
-            existence seamlessly.
+            <span className={`typed-js font-aclonica`}></span>, integrating
+            technologies into existence seamlessly.
           </p>
 
           {/* Connect Button */}
@@ -74,6 +74,9 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
               darkMode ? "bg-slate-400" : "bg-black"
             } text-white py-1 px-5 rounded-md cursor-pointer hover:opacity-80 transition-opacity`}
             aria-label="Connect With Me"
+            onClick={() => {
+              window.location.href = "https://linktr.ee/umar_d3v";
+            }}
           >
             Connect With Me
           </motion.button>

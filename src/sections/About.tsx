@@ -62,8 +62,9 @@ const language = [
 const skillSets = [
   { name: "TypeScript", icon: "typescript/typescript-original" },
   { name: "JavaScript", icon: "javascript/javascript-original" },
-  { name: "React", icon: "react/react-original" },
   { name: "PHP", icon: "php/php-original" },
+  { name: "Python", icon: "python/python-original" },
+  { name: "React", icon: "react/react-original" },
   { name: "Django", icon: "django/django-plain" },
   { name: "Laravel", icon: "laravel/laravel-original" },
   { name: "Tailwind CSS", icon: "tailwindcss/tailwindcss-original" },

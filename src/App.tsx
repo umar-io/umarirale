@@ -5,6 +5,7 @@ import Hero from "./sections/Hero";
 import Footer from "./components/Footer";
 import About from "./sections/About";
 import Services from "./sections/Services";
+import Projects from "./sections/Projects";
 const App = () => {
   return (
     <DarkModeProvider>
@@ -31,6 +32,7 @@ const MainComponent = () => {
         <Hero darkMode={darkMode} />
         <About darkMode={darkMode} />
         <Services darkMode={darkMode} />
+        <Projects darkMode={darkMode} />
       </main>
       <Footer darkMode={darkMode} getYear={getYear()} />
     </div>
