@@ -4,6 +4,7 @@ import NavBar from "./components/NavBar";
 import Hero from "./sections/Hero";
 import Footer from "./components/Footer";
 import About from "./sections/About";
+import Services from "./sections/Services";
 const App = () => {
   return (
     <DarkModeProvider>
@@ -29,6 +30,7 @@ const MainComponent = () => {
       <main className="flex-grow">
         <Hero darkMode={darkMode} />
         <About darkMode={darkMode} />
+        <Services darkMode={darkMode} />
       </main>
       <Footer darkMode={darkMode} getYear={getYear()} />
     </div>
