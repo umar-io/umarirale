@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useEffect } from "react";
 import Typed from "typed.js";
+import heroImage from "../assets/slackpp.jpg";
 
 interface HeroProps {
   darkMode: boolean;
@@ -36,9 +37,16 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="w-[200px] h-[200px] rounded-[50%] bg-slate-300 flex items-center justify-center"
+          className="w-[250px] h-[250px] rounded-[50%] bg-slate-300 flex items-center justify-center"
         >
-          <span className="text-black text-2xl">H</span>
+          <img
+            src={heroImage}
+            alt=""
+            className={`w-full h-full object-cover rounded-[50%] ${
+              darkMode ? "border-slate-400" : "border-white"
+            } border-[5px] transition ease-in-out duration-300`}
+            loading="lazy"
+          />
         </motion.div>
 
         {/* Name */}
